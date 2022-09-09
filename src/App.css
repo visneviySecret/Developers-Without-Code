@@ -2,17 +2,23 @@
 @import './styles/main-screen.scss';
 @import './styles/map.scss';
 @import './styles/fonts.css';
+@import './styles/ourPartners.scss';
+
+/* $containerPadding: 4%; */
 
 body{
     margin: 0;
     padding: 0;
     font-family: 'PTRootUIWebLight';
+    color: #2E2E2E;
 }
 html {
     font-size: 16px;
 }
 .App {
-    color: 2E2E2E;
-}
 
+}
+.container{
+    padding: 0 4%;
+}
 
