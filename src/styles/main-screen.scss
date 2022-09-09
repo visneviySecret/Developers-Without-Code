@@ -1,0 +1,40 @@
+.main-screen {
+    position: relative;
+    font-style: normal;
+    text-align: center;
+    font-weight: 500;
+
+}
+.centered-text{
+    background-color: rgb(71, 182, 216);
+    background-image: url('../assets/hero.png');
+    background-size: cover;    
+    padding:  max(8.5rem, 8%) max(1rem, 11%)  max(57.5rem, 67%)  max(1rem, 11%);
+    text-shadow: 2px 0 rgb(0, 0, 0), -1px 0 rgb(0, 0, 0), 0 1px rgb(0, 0, 0), 0 -1px rgb(0, 0, 0),
+             1px 1px rgb(0, 0, 0), -1px -1px rgb(0, 0, 0), 1px -1px rgb(0, 0, 0), -1px 1px rgb(0, 0, 0), 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.centered-text__title {
+    font-family: 'DrukCyrMedium';
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    margin-bottom: 2.3rem;
+}
+.centered-text__subtitle {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    font-feature-settings: 'ss06' on, 'cpsp' on, 'ss09' on;
+
+    color: #FFFFFF;
+}
+
+@media(min-width: 640px) {
+    .centered-text__title {
+        font-size: 6rem;
+    }
+    .centered-text__subtitle {
+        font-size: 1.25rem;
+    }
+}
