@@ -5,7 +5,7 @@ import OurPartners from './AboutUs/OurPartners'
 
 export default function Container() {
     return (
-        <div className="container">
+        <div>
             <MainScreen />
             <Map />
             <OurPartners />

@@ -1,5 +1,5 @@
 .partners {
-    margin-top: -15rem;
+    margin-top: -17rem;
 }
 .partners__title {
     font-family: 'DrukCyr';
@@ -53,7 +53,10 @@
 .partners__card__link-linkArrow{
     width: 7px;
 }
-@media(min-width: 40em){
+@media(min-width: 45em){
+    .partners {
+        margin-top: -15rem;
+    }
     .partners__title{
         margin-bottom: 2.5rem;
     }
