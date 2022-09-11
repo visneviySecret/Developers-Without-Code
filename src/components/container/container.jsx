@@ -2,7 +2,8 @@ import React from 'react'
 import MainScreen from './MainScreen/MainScreen'
 import Map from './map/map'
 import Partners from './AboutUs/Partners'
-import Solutions from './AboutUs/Solutions'
+import Solutions from './AboutUs/Solutions/Solutions'
+import News from './News/news'
 
 export default function Container() {
     return (
@@ -11,6 +12,7 @@ export default function Container() {
             <Map />
             <Partners />
             <Solutions />
+            <News />
         </div>
     )
 }

@@ -105,6 +105,9 @@
     line-height: 140%;
 }
 .employ__desription__contacts-phone {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
 .employ__desription__contacts-email {
 }
@@ -114,7 +117,7 @@
     }
     .solutions__header{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
     .solutions__header-content{
         grid-column: 2 / span 2;
@@ -146,18 +149,6 @@
        display: block;
        padding-top: calc(var(--container-padding)*1.5);
        padding-right: var(--container-padding);
-    }
-    .solution__card-left__arrows-left {
-        padding: 1.125rem;  
-        border: 1px solid #4D4D4D;
-        border-radius: 50%;
-        margin-right: 0.5rem;
-    }
-    .solution__card-left__arrows-right {
-        padding: 1.125rem;  
-        border: 1px solid #4D4D4D;
-        border-radius: 50%;
-        rotate: 180deg;
     }
     .solution__card-left__description {
         width: 90%;
