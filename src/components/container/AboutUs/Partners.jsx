@@ -4,7 +4,7 @@ import workImg1 from '../../../assets/partners/work-pic.svg'
 import workImg2 from '../../../assets/partners/work-pic(1).svg'
 import workImg3 from '../../../assets/partners/work-pic(2).svg'
 
-export default function OurPartners() {
+export default function Partners() {
 
     const partners = [
         {

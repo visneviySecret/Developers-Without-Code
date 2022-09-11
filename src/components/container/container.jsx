@@ -1,14 +1,16 @@
 import React from 'react'
 import MainScreen from './MainScreen/MainScreen'
 import Map from './map/map'
-import OurPartners from './AboutUs/OurPartners'
+import Partners from './AboutUs/Partners'
+import Solutions from './AboutUs/Solutions'
 
 export default function Container() {
     return (
         <div>
             <MainScreen />
             <Map />
-            <OurPartners />
+            <Partners />
+            <Solutions />
         </div>
     )
 }

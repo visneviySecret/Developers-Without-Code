@@ -1,0 +1,173 @@
+.solutions {
+    background-color: var(--dark-color);
+    color: white;
+}
+.solutions__header {
+    font-family: 'DrukCyr';
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    letter-spacing: 0.03em;
+    padding: 0 var(--container-padding);
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+    line-height: 100%;
+}
+.solution__card-left__index {
+    font-family: 'DrukCyr';
+    color: #707070;
+    letter-spacing: 0.03em;
+    font-size: 3rem;
+    line-height: 110%;
+    padding: 0 1.5rem ;
+    padding-left: var(--container-padding);
+    border: 1px solid #4D4D4D;
+    margin-top: -6px;
+    margin-bottom: 1.5rem;
+}
+.solution__card-left__description{
+    padding: 0 var(--container-padding);
+}
+.solution__card-left__description__title{
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.8rem;
+    align-self: stretch;
+}
+.solution__card-left__description__subtitle {
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+.solution__card-left__arrows {
+    display: none;
+}
+.solutions__card-right__img{
+    width: 100%;
+    min-height: clamp(32rem, 25vw,41rem);
+    object-fit:cover;
+    object-position: 70% 20% ;
+}
+.employ__scroller {
+}
+.employ__scroller-navigation{
+}
+.employ__scroller-list{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: auto;
+    scroll-snap-type: inline mandatory;
+    position: relative;
+}
+.employ__card {
+    position: relative;
+    width: 100%;
+    scroll-snap-align: start;
+}
+.employ__background {
+    inline-size: 100%;
+    object-fit: cover;
+}
+.employ__desription{
+    max-width: 95%;
+    position: absolute;
+    bottom: 1.5rem;
+    left: var(--container-padding);
+}
+.employ__desription__status {
+    width: max-content;
+    font-size: 0.8rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+    padding: 4px 6px;
+    background: rgba(255, 255, 255, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(8px);
+    border-radius: 59px;
+}
+.employ__desription__name{
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.employ__desription__expiriense {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.64);
+    margin-bottom: 0.8rem;
+    line-height: 100%;
+}
+.employ__desription__contacts {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    line-height: 140%;
+}
+.employ__desription__contacts-phone {
+}
+.employ__desription__contacts-email {
+}
+@media(min-width: 45rem){
+    .solutions{
+        
+    }
+    .solutions__header{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .solutions__header-content{
+        grid-column: 2 / span 2;
+    }
+    .solutions__card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        border-top: 1px solid #4D4D4D;; 
+    }
+    .solutions__card-left {
+        grid-column: 1fr;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 var(--container-padding);
+    }
+    .solution__card-left__index{
+        padding-top: var(--container-padding) ;
+        margin-top: 0px;
+        border: none;   
+        grid-row: 1 / 2;     
+    }
+
+    .solution__card-left__header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .solution__card-left__arrows {
+       display: block;
+       padding-top: calc(var(--container-padding)*1.5);
+       padding-right: var(--container-padding);
+    }
+    .solution__card-left__arrows-left {
+        padding: 1.125rem;  
+        border: 1px solid #4D4D4D;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+    }
+    .solution__card-left__arrows-right {
+        padding: 1.125rem;  
+        border: 1px solid #4D4D4D;
+        border-radius: 50%;
+        rotate: 180deg;
+    }
+    .solution__card-left__description {
+        width: 90%;
+    }
+    .solutions__card-right {
+    }
+    .solutions__card-right__img{
+        margin-bottom: -7px;
+    }
+    .employ__scroller-list{
+        grid-auto-columns: 50%;
+    }
+}

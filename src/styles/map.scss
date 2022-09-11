@@ -10,7 +10,7 @@
     background-size: cover;
     background-position: 60% 30px;
     translate: 0% -50%;
-    scale: 92%;
+    scale: calc(100% - var(--container-padding)*2);
 }
 .map__title {
     font-family: 'DrukCyr';
