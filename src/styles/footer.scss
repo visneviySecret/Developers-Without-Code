@@ -1,0 +1,119 @@
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+}
+.footer__navigation > *{
+    border-top: 1px solid #4D4D4D;
+    padding: 1.5rem 0;
+}
+.footer__running-string {
+    padding: clamp(4rem, 10vw,5.5rem) 0;
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+    font-family: 'DrukCyr';
+    line-height: 100%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+.footer__logo {
+}
+.footer__menu :not(:last-child){
+    margin-bottom: 0.8rem;
+}
+.footer__menu-item {
+}
+.footer__contacts {
+}
+.footer__contacts div:not(:last-child){
+    margin-bottom: 0.8rem;
+}
+.footer__contact a {
+    text-decoration:underline;
+    text-underline-offset: 4px;
+}
+.footer__contacts-title {
+    font-size: 0.8rem;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: #707070;
+    margin-bottom: 0.5rem;    
+}
+.footer__contacts-content {
+    font-size: 1.2rem;
+    line-height: 140%;
+}
+.footer__contacts-content__img {
+    margin-right: 0.5rem;
+}
+.footer__contacts-content :last-child {
+    transform: translate(0.5rem);
+}
+.footer__rights {
+    color: #707070;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-size: 0.8rem;
+    line-height: 100%;
+}
+.footer__rights :not(:last-child){
+    margin-bottom: 0.5rem;
+    
+}
+ .footer__rights a{
+    color: inherit;
+    text-underline-offset: 4px;
+ }
+
+
+ @media(min-width: 45rem) {
+    .footer__navigation {
+        display: grid;
+        grid-template-columns: 15% 85%;
+        text-align: left;
+    }
+    .footer__navigation > *{
+        border: 1px solid #4D4D4D;
+        display: flex;
+        padding: 0.8rem 0;
+    }
+    .footer__logo{
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__menu :not(:last-child){
+        margin-bottom: 0;
+    }
+    .footer__menu :last-child{
+        border-left: 1px solid #4D4D4D;
+    }
+    .footer__menu {
+        gap: 1rem;
+    }
+    .footer__menu-item {
+        padding: 0.8rem 1.2rem;
+    }
+    .footer__contacts {
+        grid-column-start: 2;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: clamp(2.5rem, 3vw, 8.4rem);  
+        padding: 2.7rem 1rem;
+        justify-items: center;
+        vertical-align: bottom;
+    }
+    .footer__contact:nth-child(2) {
+        grid-row-start: 2;
+    }
+    .footer__rights {
+        grid-column-start: 2;
+        gap: 1.2rem
+    }
+    .footer__rights:only-child {
+        padding: 0.9rem 0;
+    }
+    .footer__rights :nth-child(3){
+        margin-left: auto;
+        padding-right: 2.5rem;
+    }
+ }

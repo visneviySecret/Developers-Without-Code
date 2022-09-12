@@ -1,6 +1,6 @@
 import React from 'react'
 import MainScreen from './MainScreen/MainScreen'
-import Map from './map/map'
+import Map from './Map/map'
 import Partners from './AboutUs/Partners'
 import Solutions from './AboutUs/Solutions/Solutions'
 import News from './News/news'
