@@ -45,6 +45,7 @@
 }
 .footer__contacts-content__img {
     margin-right: 0.5rem;
+    cursor: pointer;
 }
 .footer__contacts-content :last-child {
     transform: translate(0.5rem);
@@ -56,15 +57,10 @@
     font-size: 0.8rem;
     line-height: 100%;
 }
-.footer__rights :not(:last-child){
-    margin-bottom: 0.5rem;
-    
-}
  .footer__rights a{
     color: inherit;
     text-underline-offset: 4px;
  }
-
 
  @media(min-width: 45rem) {
     .footer__navigation {
@@ -107,9 +103,10 @@
     }
     .footer__rights {
         grid-column-start: 2;
-        gap: 1.2rem
+        gap: 1.2rem;
+        padding-left: 1.5rem;
     }
-    .footer__rights:only-child {
+    .footer__rights > *{
         padding: 0.9rem 0;
     }
     .footer__rights :nth-child(3){

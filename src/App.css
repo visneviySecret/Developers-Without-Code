@@ -7,6 +7,8 @@
 @import './styles/solutions.scss';
 @import './styles/news.scss';
 @import './styles/footer.scss';
+@import './styles/hamburger.scss';
+@import './styles/plusIcon.scss';
 
 :root{
     --container-padding: 4%;

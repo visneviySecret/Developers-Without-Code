@@ -1,0 +1,43 @@
+.plusIcon{
+    position: relative;
+    padding: 8px;
+    border: 1px solid #4D4D4D;
+    border-radius: 50%;
+    transition: transform 150ms ease-in-out;
+}
+.plusIcon::after,
+.plusIcon::before{
+    width: 6px;
+    height: 1px;
+    background-color: white;
+}
+.plusIcon::after,
+.plusIcon::before
+{
+    content: '';
+    position: absolute;
+    left: 32%;
+    right: 50%;
+}
+.plusIcon::before{
+    content: '';
+    position: absolute;
+    transform: rotate(90deg) ; 
+}
+.plusIcon-active .plusIcon::before {
+    transform: rotate(-90deg) ; 
+    opacity: 0;
+}
+.plusIcon-active .plusIcon::after{
+    transform: rotate(90deg)
+}
+
+@media(min-width: 45rem){
+    .plusIcon{
+        border: 1.5px solid #E4E4E4;
+    }
+    .plusIcon::before,
+    .plusIcon::after{
+        background-color: #4D4D4D;
+    }
+}
