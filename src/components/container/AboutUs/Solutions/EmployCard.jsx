@@ -15,5 +15,6 @@ export default function EmployCard({ photo, status, name, expirience, contacts }
                 </div>
             </div>
         </div>
+
     )
 }

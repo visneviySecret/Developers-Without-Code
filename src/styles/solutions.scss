@@ -48,19 +48,53 @@
     object-fit:cover;
     object-position: 70% 20% ;
 }
-.employ__scroller {
+.carousel {
+    position: relative;
 }
-.employ__scroller-navigation{
+.carousel__bullets {
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    left: var(--container-padding);
+    top: var(--container-padding);
+    gap: 0.5rem;
 }
-.employ__scroller-list{
-    display: grid;
+.carousel__bullet {
+    background: rgba(255, 255, 255, 0.64);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+}
+.carousel__bullet-active  {
+    width: 6px;
+    height: 6px;
+    background: #FFFFFF;
+}
+.employ__slider {
+}
+.employ__slider-navigation{
+}
+::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+.employ__slider-list{
+    /*display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 100%;
     overflow-x: auto;
-    scroll-snap-type: inline mandatory;
+    scroll-snap-type: inline mandatory;*/
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     position: relative;
 }
+
 .employ__card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 100%;
     position: relative;
     width: 100%;
     scroll-snap-align: start;
@@ -111,6 +145,7 @@
 }
 .employ__desription__contacts-email {
 }
+
 @media(min-width: 45rem){
     .solutions{
         
@@ -158,7 +193,10 @@
     .solutions__card-right__img{
         margin-bottom: -7px;
     }
-    .employ__scroller-list{
+    .employ__slider-list{
         grid-auto-columns: 50%;
+    }
+    .carousel__bullets {
+        display: none;
     }
 }
