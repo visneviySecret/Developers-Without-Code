@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import EmployCard from './EmployCard'
 
+
 export default function Slider({ slides }) {
     const carouselRef = useRef()
     const [count, setCount] = useState(0)
