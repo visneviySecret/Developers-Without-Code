@@ -1,13 +1,8 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import Slider from './Slider'
+import { ParallaxBanner } from 'react-scroll-parallax';
 
 export default function SolutionCard({ solution, solutionIndex }) {
-    const newDelta = useRef(0)
-
-    const incrementCarousel = delta => {
-        newDelta.current = delta
-    }
-
 
     return (
         <div className="solutions__card">
@@ -21,12 +16,12 @@ export default function SolutionCard({ solution, solutionIndex }) {
                 </div>
             </div>
             <div className="solutions__card-right">
-                {solution.imgUrl && (<img className="solutions__card-right__img" src={solution.imgUrl} />)}
+                {solution.imgUrl && (
+                    <ParallaxBanner
+                        layers={[{ image: solution.imgUrl, speed: -30 }]}
+                        className="solutions__card-right__img" />)}
                 {solution.employData && (
-                    <Slider
-                        slides={solution.employData}
-                        newDelta={newDelta}
-                    />
+                    <Slider slides={solution.employData} />
                 )}
             </div>
 

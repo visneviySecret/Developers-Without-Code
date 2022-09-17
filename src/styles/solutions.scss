@@ -39,10 +39,8 @@
 }
 .solution__card-left__arrows {display: none;}
 .solutions__card-right__img{
-    width: 100%;
-    min-height: clamp(32rem, 25vw,41rem);
-    object-fit:cover;
-    object-position: 70% 20% ;
+    min-height: clamp(32rem, 50vw,54rem);
+    position: absolute;
 }
 
 .carousel {position: relative;}

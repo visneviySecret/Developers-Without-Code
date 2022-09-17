@@ -49,8 +49,8 @@ export default function Menu() {
 
 
     return (
-        <div className={`menu ${isActive && "menu menu__burger-active"} ${hideNavbar && "menu__navigation-disapear"}`} >
-            <nav className={`menu__navigation `}>
+        <div className={`menu ${hideNavbar && "menu__navigation-disapear"}`} >
+            <nav className={`menu__navigation ${isActive && "menu__burger-active"}`}>
                 <div className="logotip">LOGOTIP</div>
                 <div className="menu__navigation-items"
                 >
@@ -113,7 +113,7 @@ export default function Menu() {
             </nav>
 
 
-            <div className="menu__burger" onClick={() => toggleClassHandler()}>
+            <div className={`menu__burger ${isActive && "menu__burger-active"}`} onClick={() => toggleClassHandler()}>
                 <span className="menu__burger__icon" src="" alt="burger menu" />
                 <span className="menu__burger__title">{isActive ? "закрыть" : "меню"}</span>
             </div>

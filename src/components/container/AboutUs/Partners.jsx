@@ -30,7 +30,7 @@ export default function Partners() {
     ]
 
     return (
-        <Parallax speed={1} className="partners container">
+        <Parallax speed={20} className="partners container">
             <span className="partners__title">С КЕМ МЫ СОТРУДНИЧАЕМ</span>
 
             <div className="patners__list">

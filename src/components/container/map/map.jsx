@@ -4,7 +4,7 @@ import { Parallax } from 'react-scroll-parallax'
 export default function () {
     return (
 
-        <Parallax speed={2} className="map">
+        <Parallax speed={50} className="map">
             <div className="map__title">ПОД НАШИМ УПРАВЛЕНИЕМ</div>
             <div className="map__description">
                 <div className="map__card">

@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import EmployCard from './EmployCard'
 
 
-export default function Slider({ slides, newDelta }) {
+export default function Slider({ slides }) {
     const carouselRef = useRef()
     const [count, setCount] = useState(0)
 
@@ -58,6 +58,7 @@ export default function Slider({ slides, newDelta }) {
             </div>
             <div className="carousel__bullets">
                 {slides.map((item, index) => (
+
                     <div
                         key={index}
                         className={`${index === count ? 'carousel__bullet carousel__bullet-active' : 'carousel__bullet'}`}></div>

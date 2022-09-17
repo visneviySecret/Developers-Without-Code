@@ -34,7 +34,7 @@ export default function Solutions() {
     ]
 
     return (
-        <Parallax speed={1} className="solutions">
+        <div className="solutions">
             <div className="solutions__header">
                 <span className="solutions__header-content">
                     Нас выбирают, потому что мы автомати&shy;зируем все процессы и предлагаем комп&shy;лексные решения
@@ -48,6 +48,6 @@ export default function Solutions() {
                     solutionIndex={index}
                 />
             ))}
-        </Parallax>
+        </div>
     )
 }

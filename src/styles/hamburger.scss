@@ -20,8 +20,13 @@
 .menu__burger__icon::before{bottom: 5px;}
 .menu__burger__icon::after{top: 5px;}
 
+.menu__burger:hover:not(.menu__burger-active) .menu__burger__icon::before {transform: translateY(-2px);}
+.menu__burger:hover:not(.menu__burger-active) .menu__burger__icon::after{transform: translateY(2px)}
+
 .menu__burger-active .menu__burger__icon{
     transform: rotate(45deg);
+}.menu__burger:hover.menu__burger-active .menu__burger__icon{
+    transform: rotate(calc(0.25turn + 45deg));
 }
 .menu__burger-active .menu__burger__icon::before{
     opacity: 0;
