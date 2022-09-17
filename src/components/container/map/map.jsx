@@ -1,8 +1,10 @@
 import React from 'react'
+import { Parallax } from 'react-scroll-parallax'
 
 export default function () {
     return (
-        <div className="map">
+
+        <Parallax speed={2} className="map">
             <div className="map__title">ПОД НАШИМ УПРАВЛЕНИЕМ</div>
             <div className="map__description">
                 <div className="map__card">
@@ -22,6 +24,7 @@ export default function () {
                     </div>
                 </div>
             </div>
-        </div>
+        </Parallax>
+
     )
 }

@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Slider from './Slider'
 
 export default function SolutionCard({ solution, solutionIndex }) {
+    const newDelta = useRef(0)
+
+    const incrementCarousel = delta => {
+        newDelta.current = delta
+    }
 
 
     return (
@@ -20,6 +25,7 @@ export default function SolutionCard({ solution, solutionIndex }) {
                 {solution.employData && (
                     <Slider
                         slides={solution.employData}
+                        newDelta={newDelta}
                     />
                 )}
             </div>

@@ -23,9 +23,7 @@
     margin-top: -6px;
     margin-bottom: 1.5rem;
 }
-.solution__card-left__description{
-    padding: 0 var(--container-padding);
-}
+.solution__card-left__description{padding: 0 var(--container-padding);}
 .solution__card-left__description__title{
     font-weight: 700;
     font-size: 1.5em;
@@ -39,18 +37,15 @@
     letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
 }
-.solution__card-left__arrows {
-    display: none;
-}
+.solution__card-left__arrows {display: none;}
 .solutions__card-right__img{
     width: 100%;
     min-height: clamp(32rem, 25vw,41rem);
     object-fit:cover;
     object-position: 70% 20% ;
 }
-.carousel {
-    position: relative;
-}
+
+.carousel {position: relative;}
 .carousel__bullets {
     z-index: 10;
     position: absolute;
@@ -65,32 +60,16 @@
     height: 4px;
     border-radius: 50%;
 }
-.carousel__bullet-active  {
-    width: 6px;
-    height: 6px;
-    background: #FFFFFF;
-}
-.employ__slider {
-}
-.employ__slider-navigation{
-}
-::-webkit-scrollbar {
-    height: 0;
-    width: 0;
-}
+.carousel__bullet-active  {width: 6px;height: 6px;background: #FFFFFF;}
+.employ__slider {}
+.employ__slider-navigation{}
 .employ__slider-list{
-    /*display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 100%;
-    overflow-x: auto;
-    scroll-snap-type: inline mandatory;*/
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     position: relative;
 }
-
 .employ__card {
     display: flex;
     flex-direction: column;
@@ -99,10 +78,7 @@
     width: 100%;
     scroll-snap-align: start;
 }
-.employ__background {
-    inline-size: 100%;
-    object-fit: cover;
-}
+.employ__background {inline-size: 100%;}
 .employ__desription{
     max-width: 95%;
     position: absolute;
@@ -120,11 +96,7 @@
     backdrop-filter: blur(8px);
     border-radius: 59px;
 }
-.employ__desription__name{
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
+.employ__desription__name{font-weight: 700;font-size: 2rem;margin-bottom: 0.5rem;}
 .employ__desription__expiriense {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.64);
@@ -143,25 +115,13 @@
     color: white;
     cursor: pointer;
 }
-.employ__desription__contacts-email {
-}
+.employ__desription__contacts-email {}
 
 @media(min-width: 45rem){
-    .solutions{
-        
-    }
-    .solutions__header{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .solutions__header-content{
-        grid-column: 2 / span 2;
-    }
-    .solutions__card {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        border-top: 1px solid #4D4D4D;; 
-    }
+    .solutions{}
+    .solutions__header{display: grid;grid-template-columns: repeat(3, 1fr);}
+    .solutions__header-content{grid-column: 2 / span 2;}
+    .solutions__card {display: grid;grid-template-columns: 1fr 2fr;border-top: 1px solid #4D4D4D;; }
     .solutions__card-left {
         grid-column: 1fr;
         display: flex;
@@ -176,27 +136,20 @@
         grid-row: 1 / 2;     
     }
 
-    .solution__card-left__header{
-        display: flex;
-        justify-content: space-between;
-    }
+    .solution__card-left__header{display: flex;justify-content: space-between;}
     .solution__card-left__arrows {
-       display: block;
-       padding-top: calc(var(--container-padding)*1.5);
-       padding-right: var(--container-padding);
+        position: absolute;
+        z-index: 2;
+        left: -6.5rem;
+        top: -3%;
+        display: block;
+        padding-top: calc(var(--container-padding)*1.5);
+        padding-right: var(--container-padding);
     }
-    .solution__card-left__description {
-        width: 90%;
-    }
-    .solutions__card-right {
-    }
-    .solutions__card-right__img{
-        margin-bottom: -7px;
-    }
-    .employ__slider-list{
-        grid-auto-columns: 50%;
-    }
-    .carousel__bullets {
-        display: none;
-    }
+    .solution__card-left__description {width: 90%;}
+    .solutions__card-right {}
+    .solutions__card-right__img{margin-bottom: -7px;}
+    .employ__slider-list{grid-auto-columns: 50%;}
+    .employ__card {flex: 1 0 50%;}
+    .carousel__bullets {display: none;}
 }

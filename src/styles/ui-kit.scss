@@ -1,14 +1,30 @@
-    .arrow-in-circle {
-        background-image: url('../assets/icons/arrow.svg');
-        background-repeat: no-repeat;
-        background-position: 0.75rem 0.75rem;
-        padding: 1.125rem;  
-        border: 1px solid #4D4D4D;
-        border-radius: 50%;
-        margin-right: 0.5rem;
-        color: red;
-    }
-    .right {
-        margin-right: -0.5rem;
-        rotate: 180deg;
-    }
+.arrow-in-circle {
+    background-image: url('../assets/icons/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: 0.75rem 0.75rem;
+    padding: 1.125rem;  
+    border: 1px solid #4D4D4D;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    background-color: var(--dark-color);
+    cursor: pointer;
+}
+.right {
+    margin-right: -0.5rem;
+    transform: rotate(180deg);
+}
+.arrow-in-circle:hover {
+    border: 1px solid white;
+    background-image: url('../assets/icons/arrow-hover.svg');
+    background-repeat: no-repeat;
+    background-position: 0.75rem 0.75rem;
+}
+.light {
+    background-color: #fff;
+    border: 1px solid #E4E4E4;
+}
+.light:hover {
+    border: 1px solid var(--dark-color);
+    background-image: url('../assets/icons/arrow-black.svg');
+
+}

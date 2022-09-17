@@ -16,6 +16,10 @@
 .menu__navigation{
     position: relative;
 }
+.menu__navigation-item__title {
+    display: flex;
+    gap: 0.5rem;
+}
 .menu__navigation-item-active {
     color: #8A8CCE;
 }
@@ -24,11 +28,10 @@
     flex-direction: column;
     position: absolute;
     width: 100%;
-    top: 80px;
+    top: 79px;
     left: 0px;
     background-color: white;
     border-top: solid 1px #E4E4E4;
-
 }
 .menu__navigation__parameters__item{
     text-transform: lowercase;
@@ -89,7 +92,12 @@
     }
     .menu__navigation-item {
         margin-top: 1rem;
+        display: block;
     }
+    .menu__navigation-item__title {
+        padding-left: var(--container-padding);
+    }
+
     .menu__navigation-call-us {
         margin-top: auto;
         background-color: white;
@@ -99,7 +107,6 @@
         padding-left: 1.5rem;
     }
     .menu__navigation-items{
-        padding-left: var(--container-padding);
     }
     .menu__navigation-call-us{
         display: none
@@ -112,6 +119,23 @@
         width: 100%;
         padding: 1.5rem 0;
         justify-content: center;
+    }
+    .menu__navigation__parameters{
+        display: none;
+    }
+    .accordion__parameters {
+        border-top: 1px solid #4D4D4D;
+        border-bottom: 1px solid #4D4D4D;
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 0;
+        gap: 0.8rem;
+    }
+    .accordion__parameters__item {
+        text-decoration: none;
+        color: white;
+        padding-left: var(--container-padding);
     }
 }
 @media(min-width: 45rem) {
@@ -156,6 +180,9 @@
         padding: 1.6rem min(3%, 2.5rem);
     }
     .menu__burger{
+        display: none;
+    }
+    .accordion__parameters{
         display: none;
     }
 }

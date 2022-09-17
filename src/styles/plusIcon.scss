@@ -1,5 +1,6 @@
 .plusIcon{
     position: relative;
+    height: 1px;
     padding: 8px;
     border: 1px solid #4D4D4D;
     border-radius: 50%;
@@ -24,7 +25,11 @@
     position: absolute;
     transform: rotate(90deg) ; 
 }
+.plusIcon-active .plusIcon {
+    transform: rotate(90deg)
+}
 .plusIcon-active .plusIcon::before {
+    background-color: red;
     transform: rotate(-90deg) ; 
     opacity: 0;
 }

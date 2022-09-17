@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import EmployCard from './EmployCard'
 
 
-export default function Slider({ slides }) {
+export default function Slider({ slides, newDelta }) {
     const carouselRef = useRef()
     const [count, setCount] = useState(0)
 
@@ -31,12 +31,12 @@ export default function Slider({ slides }) {
     const incrementCarousel = delta => {
         if (!carouselRef.current) return
         const width = carouselRef.current.offsetWidth
-        if (count + delta >= slides.length) {
-            setCount(0, console.log('success', count))
+        if (count + delta * 2 >= slides.length) {
+            setCount(0)
             carouselRef.current.scrollTo(0, 0)
             return
-        } else if (count + delta < 0) {
-            setCount(slides.length - 1, console.log('success', count))
+        } else if (count + delta * 2 < 0) {
+            setCount(slides.length - 1)
             carouselRef.current.scrollTo(
                 width * (slides.length - 1),
                 0
@@ -47,22 +47,17 @@ export default function Slider({ slides }) {
             carouselRef.current.scrollLeft + width * delta,
             0
         )
-        setCount(count => count + delta, console.log('success', count))
+        setCount(count => count + delta * 2)
     }
-
-    useEffect(() => {
-        console.log(carouselRef.current.offsetWidth)
-    }, [carouselRef])
 
     return (
         <div className={`employ__slider carousel`}>
             <div className="solution__card-left__arrows">
                 <button onClick={() => incrementCarousel(-1)} className="arrow-in-circle" />
-                <button onClick={() => incrementCarousel(1)} className="arrow-in-circle" />
+                <button onClick={() => incrementCarousel(1)} className="arrow-in-circle right" />
             </div>
             <div className="carousel__bullets">
                 {slides.map((item, index) => (
-
                     <div
                         key={index}
                         className={`${index === count ? 'carousel__bullet carousel__bullet-active' : 'carousel__bullet'}`}></div>
@@ -77,7 +72,7 @@ export default function Slider({ slides }) {
                     return (
                         <EmployCard
                             key={employ.id}
-                            id={`slide-${index}`}
+                            id={`slide-${index}`} arrow-in-circle
                             photo={employ.photo}
                             status={employ.status}
                             name={employ.name}

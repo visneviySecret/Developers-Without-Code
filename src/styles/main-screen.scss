@@ -10,6 +10,12 @@
     background-size: cover;  
     padding:  max(8.5rem, 8%) max(1rem, 11%)  max(57.5rem, 67%)  max(1rem, 11%);
 }
+.centered-text::after{
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    background: linear-gradient(180deg, rgba(2,0,36,0.8) 0%, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0) 31%);
+}
     .centered-text__title {
     font-family: 'DrukCyrMedium';
     font-size: clamp(2.5rem, 8vw, 6rem);

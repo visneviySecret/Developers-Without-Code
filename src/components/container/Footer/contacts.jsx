@@ -1,6 +1,6 @@
 import React from 'react'
-import telegramIcon from '../../assets/icons/telegramIcon.svg'
-import vkIcon from '../../assets/icons/vkIcon.svg'
+import telegramIcon from '../../../assets/icons/telegramIcon.svg'
+import vkIcon from '../../../assets/icons/vkIcon.svg'
 
 export default function Contacts() {
 

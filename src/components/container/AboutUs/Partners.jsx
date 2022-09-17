@@ -3,6 +3,8 @@ import linkArrowImg from "../../../assets/icons/vector.svg"
 import workImg1 from '../../../assets/partners/work-pic.svg'
 import workImg2 from '../../../assets/partners/work-pic(1).svg'
 import workImg3 from '../../../assets/partners/work-pic(2).svg'
+import { Parallax } from 'react-scroll-parallax'
+
 
 export default function Partners() {
 
@@ -28,7 +30,7 @@ export default function Partners() {
     ]
 
     return (
-        <div className="partners container">
+        <Parallax speed={1} className="partners container">
             <span className="partners__title">С КЕМ МЫ СОТРУДНИЧАЕМ</span>
 
             <div className="patners__list">
@@ -44,6 +46,6 @@ export default function Partners() {
                     </div>))}
 
             </div>
-        </div>
+        </Parallax>
     )
 }

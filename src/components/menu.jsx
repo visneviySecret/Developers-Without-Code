@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import imgVector from '../assets/icons/vector.svg'
+import Modal from './modal'
 import imgCross from '../assets/icons/cross.svg'
 import imgMinus from '../assets/icons/minus.svg'
 
@@ -25,17 +26,28 @@ export default function Menu() {
         },
     ]
     const [isActive, setActive] = useState(false)
-    const toggleClassHandler = () => { setActive(!isActive) }
+    const [activeMenu, setActiveMenu] = useState(-1)
     const [activeMenuItems, setActiveMenuItems] = useState(null)
     const [hideNavbar, setHideNavbar] = useState(false)
+    const [isModalActive, setModalActive] = useState(false)
+    const toggleClassHandler = () => { setActive(!isActive) }
+    const toggleModalHandler = () => { setModalActive(!isModalActive) }
     const controlNavbar = () => {
-        if (window.scrollY > 6700) { setHideNavbar(true) }
+        const footer = document.querySelector('.footer')
+        const rect = footer.getBoundingClientRect()
+        if (rect.top <= 0) { setHideNavbar(true) }
         else { setHideNavbar(false) }
+    }
+    const clearActiveMenu = () => {
+        setActiveMenuItems(null)
+        setActiveMenu(null)
     }
     useEffect(() => {
         window.addEventListener('scroll', controlNavbar)
         return () => { window.removeEventListener('scroll', controlNavbar) }
     }, [])
+
+
     return (
         <div className={`menu ${isActive && "menu menu__burger-active"} ${hideNavbar && "menu__navigation-disapear"}`} >
             <nav className={`menu__navigation `}>
@@ -45,38 +57,58 @@ export default function Menu() {
                     {menu.map((menuItem, index) => (
                         <div
                             key={index}
-                            className="menu__navigation-item"
+                            className={`menu__navigation-item ${index == activeMenu && 'menu__navigation-item-active'}`}
                             onMouseEnter={() => {
                                 if (menuItem.parameters) {
                                     setActiveMenuItems(menuItem.parameters)
+                                    setActiveMenu(index)
                                 }
                             }}
                             onClick={() => {
-                                activeMenuItems ? setActiveMenuItems(null) : menuItem.parameters ? setActiveMenuItems(menuItem.parameters) : null
+                                if (activeMenuItems?.length == menuItem.parameters.length) clearActiveMenu()
+                                else if (menuItem.parameters) {
+                                    setActiveMenuItems(menuItem.parameters)
+                                    setActiveMenu(index)
+                                }
                             }}
                         >
-                            <span>{menuItem.title}</span>
-                            {menuItem.parameters && <span className="plusIcon" />}
+                            <div className='menu__navigation-item__title'>
+                                <span>{menuItem.title}</span>
+                                {menuItem.parameters && <span className={`plusIcon ${index == activeMenu && 'plusIcon-active'}`} />}
+                            </div>
+
+                            {activeMenuItems && activeMenu == index &&
+                                <div className="accordion__parameters">
+                                    {activeMenuItems.map((item, index) => (
+                                        <a
+                                            href={item.url}
+                                            className="accordion__parameters__item"
+                                            key={index + 1}
+                                        >{item.title}</a>
+                                    ))}
+                                </div>}
                         </div>
                     ))}
-                    {activeMenuItems &&
-                        <div className="menu__navigation__parameters"
-                            onMouseLeave={() => setActiveMenuItems(null)}>
-                            {activeMenuItems.map((item, index) => (
-                                <a
-                                    href={item.url}
-                                    className="menu__navigation__parameters__item"
-                                    key={index + 1}
-                                >{item.title}</a>
-                            ))}
-                        </div>}
+                    <div className="menu__navigation__parameters"
+                        onMouseLeave={() => clearActiveMenu()}>
+                        {activeMenuItems?.map((item, index) => (
+                            <a
+                                href={item.url}
+                                className="menu__navigation__parameters__item"
+                                key={index + 1}
+                            >{item.title}</a>
+                        ))}
+                    </div>
                 </div>
                 <div
                     className="menu__navigation-item menu__navigation-call-us"
-                    onClick={() => setActiveMenuItems(null)}
+                    onClick={() => {
+                        clearActiveMenu()
+                        toggleModalHandler()
+                    }}
                 >
                     <span>cвязаться с нами</span>
-                    <img src={imgVector} alt="" className="menu__navigation-item-icon" />
+                    <img onClick={() => toggleModalHandler()} src={imgVector} alt="" className="menu__navigation-item-icon" />
                 </div>
             </nav>
 
@@ -85,6 +117,9 @@ export default function Menu() {
                 <span className="menu__burger__icon" src="" alt="burger menu" />
                 <span className="menu__burger__title">{isActive ? "закрыть" : "меню"}</span>
             </div>
+            <Modal
+                isModalActive={isModalActive}
+                setModalActive={setModalActive} />
         </div>
     )
 }

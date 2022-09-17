@@ -1,5 +1,7 @@
 import React from 'react'
 import Contacts from './contacts'
+import { Parallax } from 'react-scroll-parallax'
+
 export default function Footer() {
     const menu = [
         { title: 'управление недвижимостью', url: '' },
@@ -8,7 +10,7 @@ export default function Footer() {
         { title: 'новости', url: '' },]
 
     return (
-        <div className="footer">
+        <Parallax speed={1} className="footer">
             <div className="footer__running-string">
                 Закажите обратный звонок, чтобы обсудить подробности * Закажите обратный звонок, чтобы обсудить подробности
 
@@ -31,6 +33,6 @@ export default function Footer() {
                     <span>сайт сделан в CEDRO</span>
                 </div>
             </div>
-        </div>
+        </Parallax>
     )
 }
