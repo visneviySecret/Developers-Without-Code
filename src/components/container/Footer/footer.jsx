@@ -1,6 +1,5 @@
 import React from 'react'
 import Contacts from './contacts'
-import { Parallax } from 'react-scroll-parallax'
 
 export default function Footer() {
     const menu = [
@@ -10,11 +9,52 @@ export default function Footer() {
         { title: 'новости', url: '' },]
 
     return (
-        <Parallax speed={1} className="footer">
-            <div className="footer__running-string">
-                Закажите обратный звонок, чтобы обсудить подробности * Закажите обратный звонок, чтобы обсудить подробности
+        <div className="footer">
+            <ul className="footer__running-string">
+                <li className="footer__running-string1">
+                    <div >
+                        <span className="footer__running-string-black">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                        <span className="footer__running-string-white">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                    </div>
+                    <div className="footer__running-string1-second-half">
+                        <span className="footer__running-string-black">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                        <span className="footer__running-string-white">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                    </div>
+                </li>
+                <li className="footer__running-string2">
+                    <div >
+                        <span className="footer__running-string-black">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                        <span className="footer__running-string-white">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                    </div>
+                    <div className="footer__running-string2-second-half">
+                        <span className="footer__running-string-black">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                        <span className="footer__running-string-white">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                    </div>
+                </li>
+                <li className="footer__running-string3">
+                    <div >
+                        <span className="footer__running-string-black">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                        <span className="footer__running-string-white">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                    </div>
+                    <div className="footer__running-string3-second-half">
+                        <span className="footer__running-string-black">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                        <span className="footer__running-string-white">Закажите обратный звонок, чтобы обсудить подробности</span>
+                        <span className="footer__running-string__dot">&#8226;</span>
+                    </div>
 
-            </div>
+                </li>
+            </ul>
             <div className="footer__navigation">
                 <div className="footer__logo">
                     LOGOTIP
@@ -33,6 +73,6 @@ export default function Footer() {
                     <span>сайт сделан в CEDRO</span>
                 </div>
             </div>
-        </Parallax>
+        </div>
     )
 }

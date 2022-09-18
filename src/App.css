@@ -10,6 +10,7 @@
 @import './styles/footer.scss';
 @import './styles/hamburger.scss';
 @import './styles/plusIcon.scss';
+@import './styles/marque.scss';
 
 :root{
     --container-padding: 4%;
@@ -46,4 +47,12 @@ html {
 @keyframes spin__link__word-out {
     from{transform: translateY(-110%)}
     to{transform: translateY(0)}
+}
+@keyframes running-string {
+    0%{transform: translateX(100%)}
+    100%{transform: translateX(-100%)}
+}
+@keyframes running-string2 {
+    0%{transform: translateX(0%)}
+    100%{transform: translateX(-200%)}
 }

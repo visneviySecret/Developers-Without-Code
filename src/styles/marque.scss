@@ -1,0 +1,40 @@
+.footer__running-string> * {
+    display: flex;
+}
+
+.footer__running-string1 :nth-child(1) {
+    animation: running-string 20s infinite linear;
+}
+
+.footer__running-string1 :nth-child(2){
+    animation: running-string2 20s infinite linear;
+    animation-delay: -10s;
+}
+
+.footer__running-string2 :nth-child(1) {
+    animation: running-string 20s infinite linear;
+    animation-delay: -12s;
+}
+.footer__running-string2 :nth-child(2){
+    animation: running-string2 20s infinite linear;
+    animation-delay: -22s;
+}
+
+.footer__running-string3 :nth-child(1){
+    animation: running-string 20s infinite linear;
+    animation-delay: -24s;
+}
+.footer__running-string3 :nth-child(2) {
+    animation: running-string2 20s infinite linear;
+    animation-delay: -34s;
+}
+.footer__running-string-black {
+    color: var(--dark-color);
+    -webkit-text-stroke: 1px #fff;
+}
+
+.footer__running-string-white{
+}
+.footer__running-string__dot {
+    margin: 0 2.5rem;
+}

@@ -15,8 +15,10 @@
     line-height: 100%;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    white-space: nowrap;
     overflow: hidden;
 }
+
 .footer__logo {
 }
 .footer__menu :not(:last-child){
