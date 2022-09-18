@@ -43,8 +43,10 @@ export default function News() {
     return (
         <div speed={0} className="news__container">
             <div className="news__header">
-                <h2 className="news__header-title">НАШИ НОВОСТИ</h2>
-                <a className="news__header-link">все новости
+                <h2 className="news__header-title split__title-animation">
+                    <div><span> НАШИ НОВОСТИ</span></div>
+                </h2>
+                <a className="news__header-link link-animation">все новости
                     <img src={imgArrow} alt="" />
                 </a>
                 <div className="news__header-arrows">
@@ -68,7 +70,7 @@ export default function News() {
                 </div>
 
             </div>
-            <a className="news__footer-link">все новости
+            <a className="news__footer-link link-animation">все новости
                 <img src={imgArrow} alt="" />
             </a>
         </div>

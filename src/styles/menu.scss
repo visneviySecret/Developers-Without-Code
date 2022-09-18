@@ -21,7 +21,7 @@
     gap: 0.5rem;
 }
 .menu__navigation-item-active {
-    color: #8A8CCE;
+    color: var(--hover-color);
 }
 .menu__navigation__parameters{
     display: flex;
@@ -31,7 +31,7 @@
     top: 79px;
     left: 0px;
     background-color: white;
-    border-top: solid 1px #E4E4E4;
+    border-top: solid 1px var(--secondary-color);
 }
 .menu__navigation__parameters__item{
     text-transform: lowercase;
@@ -41,11 +41,11 @@
     padding-left: 1.5rem;
 }
 .menu__navigation__parameters__item:hover{
-    background-color: #8A8CCE;
+    background-color: var(--hover-color);
     color: white
 }
 .menu__burger {
-    border-left: solid 1px #E4E4E4;
+    border-left: solid 1px var(--secondary-color);
     display: flex;
     text-align: center;
     align-items: center;
@@ -164,7 +164,7 @@
     }
     
     .menu__navigation-call-us {
-        border-left: solid 1px #E4E4E4;
+        border-left: solid 1px var(--secondary-color);
         margin-left: auto;
         padding: min(3%, 2rem)
     }
@@ -176,7 +176,7 @@
         padding: 0.8rem min(1%, 1.2rem) 
     }
     .logotip {
-        border-right: 1px solid #E4E4E4;
+        border-right: 1px solid var(--secondary-color);
         padding: 1.6rem min(3%, 2.5rem);
     }
     .menu__burger{

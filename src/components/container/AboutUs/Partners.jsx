@@ -1,21 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import linkArrowImg from "../../../assets/icons/vector.svg"
 import workImg1 from '../../../assets/partners/work-pic.svg'
 import workImg2 from '../../../assets/partners/work-pic(1).svg'
 import workImg3 from '../../../assets/partners/work-pic(2).svg'
 import { Parallax } from 'react-scroll-parallax'
-import { ScrollTrigger } from 'gsap/all'
-import gsap from 'gsap'
-gsap.registerPlugin(ScrollTrigger)
 
 
 export default function Partners() {
-
-    useEffect(() => {
-        gsap.fromTo('.partners__title span', { y: 100 }, {
-            y: 0, duration: 0.3, stagger: 0.2, scrollTrigger: { trigger: '.partners__title', start: "top 90%" }
-        })
-    }, [])
 
     const partners = [
         {
@@ -52,10 +43,15 @@ export default function Partners() {
                 {partners.map(partner => (
                     <div className="partners__card" key={partner.title}>
                         <img className="partners__card-img" src={partner.img} alt="Worker's black and white picture" />
-                        <p className="partners__card-title">{partner.title}</p>
+                        <div className="partners__card-title split__title-animation">
+                            <div><span>{partner.title}</span></div>
+                        </div>
                         <div className="partners__card-description">{partner.description}</div>
                         <a className="partners__card__link" url={partner.url} >
-                            <span className="partners__card__link-word">подробнее</span>
+                            <div className="partners__card__link-word">
+                                <span className="partners__card__link-word-first">подробнее</span>
+                                <span className="partners__card__link-word-second">подробнее</span>
+                            </div>
                             <img className="partners__card__link-linkArrow" src={linkArrowImg} alt="link arrow" />
                         </a>
                     </div>))}

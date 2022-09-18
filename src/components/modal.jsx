@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import imgVector from '../assets/icons/vector.svg'
 import imgPhone from '../assets/icons/phoneIcon.svg'
 
@@ -10,18 +10,34 @@ export default function Modal({ isModalActive, setModalActive }) {
 
     const [formState, setFormState] = useState({ name: '', phone: '' })
     const [isCallOrdered, setIsCallOrdered] = useState(false)
+    const [isError, setIsError] = useState('modal__error')
+
+    const formNameHandler = event => {
+        setFormState({ ...formState, name: event.target.value })
+    }
+    const formPhoneHandler = event => {
+        setFormState({ ...formState, phone: event.target.value })
+    }
 
     const submitHandler = () => {
         console.log(formState, 'formState')
+        if (formState.name == '' || formState.phone == '') {
+            setIsError('modal__error active')
+            setTimeout(() => { setIsError('modal__error') }, 2000)
+            return
+        }
         setIsCallOrdered(true)
     }
 
     return (
-        <div className={`modal ${isModalActive && 'modal-active'}`} >
+        <div className={`modal ${isModalActive && "modal-active"} `} >
             <div className="modal-head">
                 <div className="modal-head__logo">LOGOTIP</div>
                 <div className="modal-head__cross" onClick={() => setModalActive(!isModalActive)}>
                     <span className="modal-head__cross__icon"></span>
+                </div>
+                <div className={`${isError}`}>
+                    Поля не могут быть пустыми!
                 </div>
             </div>
             <div className={`modal-body ${isCallOrdered && 'modal-body-closing'}`}>
@@ -31,10 +47,12 @@ export default function Modal({ isModalActive, setModalActive }) {
                 </div>
                 <div className="modal-body__form">
                     <input
-                        onChange={(value) => setFormState({ name: value, ...formState })}
+                        value={formState.name}
+                        onChange={formNameHandler}
                         type="text" className="modal-body__form__input" placeholder="ВАШЕ ИМЯ" />
                     <input
-                        onChange={(value) => setFormState({ phone: value, ...formState })}
+                        value={formState.phone}
+                        onChange={formPhoneHandler}
                         type="phone" className="modal-body__form__input" placeholder="ТЕЛЕФОН" />
                     <button
                         onClick={() => submitHandler()}

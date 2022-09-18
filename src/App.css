@@ -14,6 +14,8 @@
 :root{
     --container-padding: 4%;
     --dark-color: #2E2E2E;
+    --secondary-color: #E4E4E4;
+    --hover-color: #8A8CCE;
 }
 
 body{
@@ -36,4 +38,12 @@ html {
 }
 .split__title-animation span{
     display: inline-block;
+}
+@keyframes spin__link__word {
+    from{transform: translateY(0)}
+    to{transform: translateY(-110%)}
+}
+@keyframes spin__link__word-out {
+    from{transform: translateY(-110%)}
+    to{transform: translateY(0)}
 }

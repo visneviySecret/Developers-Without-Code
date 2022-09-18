@@ -28,3 +28,14 @@
     background-image: url('../assets/icons/arrow-black.svg');
 
 }
+.link-animation {
+  background: linear-gradient(to top, #5392C5 50%, #fff 50%);
+  background-size: 100% 200%;
+  background-position: top left;
+  transition: all .3s ease-out;
+}
+
+.link-animation:hover {
+  background-position: bottom left;
+  color: #fff;
+}

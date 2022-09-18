@@ -101,7 +101,7 @@ export default function Menu() {
                     </div>
                 </div>
                 <div
-                    className="menu__navigation-item menu__navigation-call-us"
+                    className="menu__navigation-item menu__navigation-call-us  link-animation"
                     onClick={() => {
                         clearActiveMenu()
                         toggleModalHandler()

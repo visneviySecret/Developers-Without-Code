@@ -46,13 +46,31 @@
     align-items: center;
     position: absolute;
     bottom: 1.5rem;
+    display: flex;
 }
 .partners__card__link-word{
+    height: 1rem;
+    margin: auto;
     margin-right: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+.partners__card__link-word > * {
+    display: block;
+    height: 100%;
+    margin-bottom: 1px;
+    animation: spin__link__word-out 0.3s both
+}
+.partners__card__link-word:hover > * {
+    animation: spin__link__word 0.3s both
+}
+.partners__card__link-word-second{
+    color: var(--hover-color);
 }
 .partners__card__link-linkArrow{
     width: 7px;
 }
+
 @media(min-width: 45em){
     .partners {
         margin-top: -15rem;

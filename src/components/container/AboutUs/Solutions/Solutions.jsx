@@ -3,7 +3,6 @@ import imgCard1 from '../../../../assets/solutions/working.png'
 import imgCard2 from '../../../../assets/solutions/reception.png'
 import imgEmploy from '../../../../assets/solutions/employ.png'
 import SolutionCard from './SolutionCard'
-import { Parallax } from 'react-scroll-parallax'
 
 
 export default function Solutions() {
@@ -36,9 +35,12 @@ export default function Solutions() {
     return (
         <div className="solutions">
             <div className="solutions__header">
-                <span className="solutions__header-content">
-                    Нас выбирают, потому что мы автомати&shy;зируем все процессы и предлагаем комп&shy;лексные решения
-                </span>
+                <div className="solutions__header-content split__title-animation">
+                    <div><span>Нас выбирают, потому что</span></div>
+                    <div><span>мы автомати&shy;зируем все</span></div>
+                    <div><span>gроцессы и предлагаем</span></div>
+                    <div><span>комп&shy;лексные решения</span></div>
+                </div>
             </div>
 
             {solutions.map((solution, index) => (
