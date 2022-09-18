@@ -10,10 +10,11 @@ import Animation from './animation'
 
 
 
-export default function Container() {
+export default function Container({ setIsModalActive }) {
     useEffect(() => {
         Animation()
     }, [])
+
     return (
         <ParallaxProvider >
             <MainScreen />
@@ -26,7 +27,7 @@ export default function Container() {
 
             <News />
 
-            <Footer />
+            <Footer setIsModalActive={setIsModalActive} />
         </ParallaxProvider >
     )
 }

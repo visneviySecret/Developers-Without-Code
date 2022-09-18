@@ -5,7 +5,7 @@ import imgCross from '../assets/icons/cross.svg'
 import imgMinus from '../assets/icons/minus.svg'
 
 
-export default function Menu() {
+export default function Menu({ isModalActive, setIsModalActive }) {
     const menu = [
         {
             id: 0, title: 'управление недвижимостью', parameters: [
@@ -29,9 +29,8 @@ export default function Menu() {
     const [activeMenu, setActiveMenu] = useState(-1)
     const [activeMenuItems, setActiveMenuItems] = useState(null)
     const [hideNavbar, setHideNavbar] = useState(false)
-    const [isModalActive, setModalActive] = useState(false)
     const toggleClassHandler = () => { setActive(!isActive) }
-    const toggleModalHandler = () => { setModalActive(!isModalActive) }
+    const toggleModalHandler = () => { setIsModalActive(!isModalActive) }
     const controlNavbar = () => {
         const footer = document.querySelector('.footer')
         const rect = footer.getBoundingClientRect()
@@ -119,7 +118,7 @@ export default function Menu() {
             </div>
             <Modal
                 isModalActive={isModalActive}
-                setModalActive={setModalActive} />
+                setModalActive={setIsModalActive} />
         </div>
     )
 }

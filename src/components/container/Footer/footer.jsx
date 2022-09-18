@@ -1,7 +1,7 @@
 import React from 'react'
 import Contacts from './contacts'
 
-export default function Footer() {
+export default function Footer({ setIsModalActive }) {
     const menu = [
         { title: 'управление недвижимостью', url: '' },
         { title: 'продажа и аренда', url: '' },
@@ -10,7 +10,9 @@ export default function Footer() {
 
     return (
         <div className="footer">
-            <ul className="footer__running-string">
+            <ul className="footer__running-string"
+                onClick={setIsModalActive}
+            >
                 <li className="footer__running-string1">
                     <div >
                         <span className="footer__running-string-black">Закажите обратный звонок, чтобы обсудить подробности</span>
