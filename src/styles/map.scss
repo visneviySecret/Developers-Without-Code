@@ -32,7 +32,7 @@
     font-size: 1.75rem;
     line-height: 110%;
 }
-.map__card-sub-title {
+.map__card-subtitle {
     color: #ADADAD;
     letter-spacing: -0.02em;
     font-size: 0.8rem
@@ -49,6 +49,9 @@
         text-align: left;
         line-height: 100%;
     }
+    .map__title{
+        display: flex;
+    }
     .map__description{
         display: flex;
         gap: 2.5rem;
@@ -57,7 +60,7 @@
         font-size: 3rem;
         margin-bottom: 0.5rem;
     }
-    .map__card-sub-title {
+    .map__card-subtitle {
         font-size: 1rem
     }
 }

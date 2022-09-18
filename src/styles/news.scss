@@ -50,6 +50,9 @@
 }
 .news__card-info__content {font-size: clamp(0.7rem,1vw,0.9rem);line-height: 140%;}
 @media(min-width: 45rem) {
+    .news {
+        overflow: hidden;
+    }
     .news__header-arrows{display: none;}
     .news__footer-link {display: none;}
     .news__header-link {display: block;border: 1px solid #E4E4E4;padding: 1.5rem 2.5rem;}
@@ -57,7 +60,6 @@
     .news__body{
         display: grid;
         grid-template-columns: repeat(3, 33%);
-        overflow: hidden;
         inline-size: 100%;
     }
     .news__card{

@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import linkArrowImg from "../../../assets/icons/vector.svg"
 import workImg1 from '../../../assets/partners/work-pic.svg'
 import workImg2 from '../../../assets/partners/work-pic(1).svg'
 import workImg3 from '../../../assets/partners/work-pic(2).svg'
 import { Parallax } from 'react-scroll-parallax'
+import { ScrollTrigger } from 'gsap/all'
+import gsap from 'gsap'
+gsap.registerPlugin(ScrollTrigger)
 
 
 export default function Partners() {
+
+    useEffect(() => {
+        gsap.fromTo('.partners__title span', { y: 100 }, {
+            y: 0, duration: 0.3, stagger: 0.2, scrollTrigger: { trigger: '.partners__title', start: "top 90%" }
+        })
+    }, [])
 
     const partners = [
         {
@@ -31,7 +40,13 @@ export default function Partners() {
 
     return (
         <Parallax speed={20} className="partners container">
-            <span className="partners__title">С КЕМ МЫ СОТРУДНИЧАЕМ</span>
+            <div className="partners__title split__title-animation">
+                <div>
+                    <span>
+                        С КЕМ МЫ СОТРУДНИЧАЕМ
+                    </span>
+                </div>
+            </div>
 
             <div className="patners__list">
                 {partners.map(partner => (

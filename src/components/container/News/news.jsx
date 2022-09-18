@@ -41,7 +41,7 @@ export default function News() {
     }
 
     return (
-        <Parallax speed={1} className="news__container">
+        <div speed={0} className="news__container">
             <div className="news__header">
                 <h2 className="news__header-title">НАШИ НОВОСТИ</h2>
                 <a className="news__header-link">все новости
@@ -71,6 +71,6 @@ export default function News() {
             <a className="news__footer-link">все новости
                 <img src={imgArrow} alt="" />
             </a>
-        </Parallax>
+        </div>
     )
 }

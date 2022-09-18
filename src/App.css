@@ -31,4 +31,9 @@ html {
 .container{
     padding: 0 var(--container-padding);
 }
-
+.split__title-animation div {
+    overflow: hidden;
+}
+.split__title-animation span{
+    display: inline-block;
+}
