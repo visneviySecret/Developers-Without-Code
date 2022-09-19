@@ -78,7 +78,7 @@
 }
 .menu__navigation-disapear{
     transition: transform 1s ease-out;
-    transform: translateY(-500px);
+    transform: translateY(-100%);
 }
 @media(max-width: 45rem) {
     .menu__navigation-items{

@@ -40,13 +40,13 @@ export default function Partners() {
             </div>
 
             <div className="patners__list">
-                {partners.map(partner => (
-                    <div className="partners__card" key={partner.title}>
+                {partners.map((partner, id) => (
+                    <div className="partners__card" key={id}>
                         <img className="partners__card-img" src={partner.img} alt="Worker's black and white picture" />
-                        <div className="partners__card-title split__title-animation">
+                        <div id={`partners__card-title${id}`} className="partners__card-title split__title-animation">
                             <div><span>{partner.title}</span></div>
                         </div>
-                        <div className="partners__card-description">{partner.description}</div>
+                        <div id={`partners__card-description${id}`} className="partners__card-description">{partner.description}</div>
                         <a className="partners__card__link" url={partner.url} >
                             <div className="partners__card__link-word">
                                 <span className="partners__card__link-word-first">подробнее</span>

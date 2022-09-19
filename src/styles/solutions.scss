@@ -40,9 +40,10 @@
 .solution__card-left__arrows {display: none;}
 .solutions__card-right__img{
     min-height: clamp(32rem, 50vw,54rem);
+    object-fit:fill;
 }
-.solutions__card-right__img-control {
-    background-position: -50% -50%
+.solutions__card-right__img > * {
+    inset: 0 0 0 -20%!important;
 }
 .carousel {position: relative;}
 .carousel__bullets {
