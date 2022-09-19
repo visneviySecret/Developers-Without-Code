@@ -5,8 +5,10 @@ export default function MainScreen() {
 
     return (
         <div className="main-screen">
-            <div className="centered-text">
-                <Parallax speed={-80} className="centered-text__content">
+            <Parallax speed={-100} className="main-screen__sky-img"></Parallax>
+            <Parallax speed={-80} className="centered-text__content">
+
+                <div className="centered-text">
                     <div className="centered-text__title split__title-animation">
                         <div>
                             <span>Управля&shy;ющая компания и брокер</span>
@@ -19,8 +21,10 @@ export default function MainScreen() {
                         </div>
                     </div>
                     <div className="centered-text__subtitle">Снимаем с владельцев зданий все задачи <br />по администрированию и подбираем недвижимость<br /> для инвестиций, покупки и аренды.</div>
-                </Parallax>
-            </div>
+                </div>
+            </Parallax>
+
+            <div className="main-screen__city-img"></div>
         </div>
     )
 }
