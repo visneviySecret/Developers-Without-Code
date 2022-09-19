@@ -20,22 +20,22 @@ export default function Slider({ slides }) {
     const handleTouchEnd = () => {
         if (touchStart - touchEnd > 5) {
             // move to left
-            setCount(prev => prev == slides.length - 1 ? 0 : prev + 1)
+            incrementCarousel(1, 1)
         }
         if (touchStart - touchEnd < -5) {
             // move to right
-            setCount(prev => prev == 0 ? slides.length - 1 : prev - 1)
+            incrementCarousel(-1, 1)
         }
     }
 
-    const incrementCarousel = delta => {
+    const incrementCarousel = (delta, multiplier) => {
         if (!carouselRef.current) return
         const width = carouselRef.current.offsetWidth
-        if (count + delta * 2 >= slides.length) {
+        if (count + delta * multiplier >= slides.length) {
             setCount(0)
             carouselRef.current.scrollTo(0, 0)
             return
-        } else if (count + delta * 2 < 0) {
+        } else if (count + delta * multiplier < 0) {
             setCount(slides.length - 1)
             carouselRef.current.scrollTo(
                 width * (slides.length - 1),
@@ -43,18 +43,19 @@ export default function Slider({ slides }) {
             )
             return
         }
+        console.log(width, delta, carouselRef.current)
         carouselRef.current.scrollTo(
             carouselRef.current.scrollLeft + width * delta,
             0
         )
-        setCount(count => count + delta * 2)
+        setCount(count => count + delta * multiplier)
     }
 
     return (
         <div className={`employ__slider carousel`}>
             <div className="solution__card-left__arrows">
-                <button onClick={() => incrementCarousel(-1)} className="arrow-in-circle" />
-                <button onClick={() => incrementCarousel(1)} className="arrow-in-circle right" />
+                <button onClick={() => incrementCarousel(-1, 2)} className="arrow-in-circle" />
+                <button onClick={() => incrementCarousel(1, 2)} className="arrow-in-circle right" />
             </div>
             <div className="carousel__bullets">
                 {slides.map((item, index) => (

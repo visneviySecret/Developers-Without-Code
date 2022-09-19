@@ -1,11 +1,10 @@
 .menu {
-    position: fixed;
-    z-index: 9999;
+    z-index: 8888;
+    position:fixed;
     background-color: white;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    top: 0;
 }
 .menu > * {
     padding: min(1.5rem, 12vw);
@@ -16,23 +15,29 @@
 }
 .menu__navigation{
     position: relative;
+
 }
 .menu__navigation-item__title {
     display: flex;
     gap: 0.5rem;
+
 }
 .menu__navigation-item-active {
+
     color: var(--hover-color);
 }
 .menu__navigation__parameters{
-    display: flex;
+    display: none;
+    z-index: 7777!important;
     flex-direction: column;
     position: absolute;
     width: 100%;
     top: 79px;
-    left: 0px;
     background-color: white;
     border-top: solid 1px var(--secondary-color);
+}
+ .menu__navigation__parameters  {
+    display: flex;
 }
 .menu__navigation__parameters__item{
     text-transform: lowercase;

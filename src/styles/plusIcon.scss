@@ -33,10 +33,12 @@
     transform: rotate(-90deg) ; 
     opacity: 0;
 }
-.plusIcon-active .plusIcon::after{
-    transform: rotate(90deg)
+.menu__navigation-item-active .plusIcon::before{
+    transform: rotate(180deg)
 }
-
+.menu__navigation-item-active .plusIcon{
+    transform: rotate(180deg)
+}
 @media(min-width: 45rem){
     .plusIcon{
         border: 1.5px solid #E4E4E4;

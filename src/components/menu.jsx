@@ -26,6 +26,7 @@ export default function Menu({ isModalActive, setIsModalActive }) {
         },
     ]
     const [isActive, setActive] = useState(false)
+    const [isError, setIsError] = useState('modal__error')
     const [activeMenu, setActiveMenu] = useState(-1)
     const [activeMenuItems, setActiveMenuItems] = useState(null)
     const [hideNavbar, setHideNavbar] = useState(false)
@@ -49,9 +50,15 @@ export default function Menu({ isModalActive, setIsModalActive }) {
 
     return (
         <div className={`menu ${hideNavbar && "menu__navigation-disapear"}`} >
+            <div className={`${isError}`}>
+                Поля не могут быть пустыми!
+            </div>
             <nav className={`menu__navigation ${isActive && "menu__burger-active"}`}>
                 <div className="logotip">LOGOTIP</div>
                 <div className="menu__navigation-items"
+                    onMouseLeave={() => {
+                        clearActiveMenu()
+                    }}
                 >
                     {menu.map((menuItem, index) => (
                         <div
@@ -88,7 +95,7 @@ export default function Menu({ isModalActive, setIsModalActive }) {
                                 </div>}
                         </div>
                     ))}
-                    <div className="menu__navigation__parameters"
+                    {activeMenuItems && <div className="menu__navigation__parameters"
                         onMouseLeave={() => clearActiveMenu()}>
                         {activeMenuItems?.map((item, index) => (
                             <a
@@ -97,7 +104,7 @@ export default function Menu({ isModalActive, setIsModalActive }) {
                                 key={index + 1}
                             >{item.title}</a>
                         ))}
-                    </div>
+                    </div>}
                 </div>
                 <div
                     className="menu__navigation-item menu__navigation-call-us  link-animation"
@@ -118,7 +125,8 @@ export default function Menu({ isModalActive, setIsModalActive }) {
             </div>
             <Modal
                 isModalActive={isModalActive}
-                setModalActive={setIsModalActive} />
+                setModalActive={setIsModalActive}
+                setIsError={setIsError} />
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import imgVector from '../assets/icons/vector.svg'
 import imgPhone from '../assets/icons/phoneIcon.svg'
 
-export default function Modal({ isModalActive, setModalActive }) {
+export default function Modal({ isModalActive, setModalActive, setIsError }) {
     const clearModal = () => {
         setModalActive(false)
         setIsCallOrdered(false)
@@ -10,7 +10,6 @@ export default function Modal({ isModalActive, setModalActive }) {
 
     const [formState, setFormState] = useState({ name: '', phone: '' })
     const [isCallOrdered, setIsCallOrdered] = useState(false)
-    const [isError, setIsError] = useState('modal__error')
 
     const formNameHandler = event => {
         setFormState({ ...formState, name: event.target.value })
@@ -31,14 +30,13 @@ export default function Modal({ isModalActive, setModalActive }) {
 
     return (
         <div className={`modal ${isModalActive && "modal-active"} `} >
+
             <div className="modal-head">
                 <div className="modal-head__logo">LOGOTIP</div>
                 <div className="modal-head__cross" onClick={() => setModalActive(!isModalActive)}>
                     <span className="modal-head__cross__icon"></span>
                 </div>
-                <div className={`${isError}`}>
-                    Поля не могут быть пустыми!
-                </div>
+
             </div>
             <div className={`modal-body ${isCallOrdered && 'modal-body-closing'}`}>
                 <div className="modal-body__header">

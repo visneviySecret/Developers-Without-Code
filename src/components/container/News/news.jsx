@@ -41,7 +41,7 @@ export default function News() {
     }
 
     return (
-        <div speed={0} className="news__container">
+        <div className="news">
             <div className="news__header">
                 <h2 className="news__header-title split__title-animation">
                     <div><span> НАШИ НОВОСТИ</span></div>
@@ -54,9 +54,9 @@ export default function News() {
                     <button onClick={() => incrementCarousel(1)} className="arrow-in-circle light right"></button>
                 </div>
             </div>
-            <div className="news" ref={carouselRef}>
+            <div className="news__body" ref={carouselRef}>
 
-                <div className="news__body" >
+                <div className="news__body__scroller" >
                     {news.map((newsItem, index) =>
                         <NewsCard
                             key={newsItem.id}
