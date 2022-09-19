@@ -65,7 +65,7 @@
 .employ__slider-navigation{}
 .employ__slider-list{
     display: flex;
-    overflow-x: scroll;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     position: relative;

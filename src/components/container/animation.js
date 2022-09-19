@@ -12,23 +12,21 @@ export default function Animation() {
 
 
     // map
+    let startDecay = 150
+    if (screenWidth <= 45 * 16) { startDecay = 210 }
     gsap.fromTo('.map__title span', { y: 150 }, {
         y: 0, duration: 0.3, stagger: 0.2, scrollTrigger: {
             trigger: '.map__title span',
+            start: `bottom ${startDecay}%`
         }
     })
-    gsap.fromTo('.map__card-title span', { y: 100 }, {
-        y: 0, duration: 0.3, stagger: 0.2, scrollTrigger: {
-            trigger: '.map__card-title span',
-            start: "bottom 140%",
-        }
-    })
-    gsap.fromTo('.map__card-subtitle span', { y: 100 }, {
-        y: 0, duration: 0.3, stagger: 0.2, scrollTrigger: {
+    gsap.fromTo(['.map__card-title span', '.map__card-subtitle span'], { y: 100 }, {
+        y: 0, duration: 0.3, stagger: 0.1, scrollTrigger: {
             trigger: '.map__card-subtitle span',
-            start: "bottom 140%",
+            start: `bottom ${startDecay + 20}%`
         }
     })
+
 
 
     // partners
@@ -52,17 +50,20 @@ export default function Animation() {
             })
         })
     } else {
-        gsap.fromTo('.partners__card-title span', { y: 100 }, {
-            y: 0, duration: 0.3, stagger: 0.2, scrollTrigger: {
-                trigger: `.partners__card-title`, start: "bottom 110%",
-                onLeave: () => ScrollTrigger.clearScrollMemory()
-            }
+        [0, 1, 2].map(index => {
+            gsap.fromTo('.partners__card-title span', { y: 100 }, {
+                y: 0, duration: 0.3, stagger: 0.2, scrollTrigger: {
+                    trigger: `.partners__card-title`, start: "bottom 110%",
+                    onLeave: () => ScrollTrigger.clearScrollMemory()
+                }
+            })
+            gsap.fromTo('.partners__card-description', { y: 100, opacity: 0 }, {
+                y: 0, opacity: 1, duration: 0.3, stagger: 0.2, scrollTrigger: {
+                    trigger: '.partners__card-description', start: "bottom 110%"
+                }
+            })
         })
-        gsap.fromTo('.partners__card-description', { y: 100, opacity: 0 }, {
-            y: 0, opacity: 1, duration: 0.3, stagger: 0.2, scrollTrigger: {
-                trigger: '.partners__card-description', start: "bottom 110%"
-            }
-        })
+
     }
 
 
@@ -89,17 +90,19 @@ export default function Animation() {
             })
         })
     } else {
-        gsap.fromTo(`#solution__card-left__description__title${index} span`, { y: 100 }, {
-            y: 0, duration: 0.3, stagger: 1.2, scrollTrigger: {
-                trigger: `#solution__card-left__description__title${index} span`,
-                start: 'bottom 120%',
-            }
-        })
-        gsap.fromTo(`#solution__card-left__description__subtitle${index}`, { y: 100, opacity: 0 }, {
-            y: 0, opacity: 1, duration: 0.3, stagger: 1.2, scrollTrigger: {
-                trigger: `#solution__card-left__description__subtitle${index}`,
-                start: 'bottom 120%'
-            }
+        [0, 1, 2].map(index => {
+            gsap.fromTo(`#solution__card-left__description__title${index} span`, { y: 100 }, {
+                y: 0, duration: 0.3, stagger: 1.2, scrollTrigger: {
+                    trigger: `#solution__card-left__description__title${index} span`,
+                    start: 'bottom 120%',
+                }
+            })
+            gsap.fromTo(`#solution__card-left__description__subtitle${index}`, { y: 100, opacity: 0 }, {
+                y: 0, opacity: 1, duration: 0.3, stagger: 1.2, scrollTrigger: {
+                    trigger: `#solution__card-left__description__subtitle${index}`,
+                    start: 'bottom 120%'
+                }
+            })
         })
     }
 

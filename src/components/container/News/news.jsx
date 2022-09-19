@@ -3,7 +3,6 @@ import imgNews1 from '../../../assets/news/img.png'
 import imgNews2 from '../../../assets/news/img (1).png'
 import NewsCard from './newsCard'
 import imgArrow from '../../../assets/icons/vector.svg'
-import { Parallax } from 'react-scroll-parallax'
 
 
 export default function News() {
@@ -19,7 +18,6 @@ export default function News() {
     const incrementCarousel = delta => {
         if (!carouselRef.current) return
         const width = carouselRef.current.offsetWidth
-        console.log(width)
 
         if (count + delta >= news.length) {
             setCount(0)
@@ -54,9 +52,9 @@ export default function News() {
                     <button onClick={() => incrementCarousel(1)} className="arrow-in-circle light right"></button>
                 </div>
             </div>
-            <div className="news__body" ref={carouselRef}>
+            <div className="news__body" >
 
-                <div className="news__body__scroller" >
+                <div className="news__body__scroller" ref={carouselRef}>
                     {news.map((newsItem, index) =>
                         <NewsCard
                             key={newsItem.id}
