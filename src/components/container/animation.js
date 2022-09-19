@@ -48,7 +48,18 @@ export default function Animation() {
             trigger: '.solutions__header-content span',
         }
     })
-
+    gsap.fromTo('.solution__card-left__description__title span', { y: 100 }, {
+        y: 0, duration: 0.3, stagger: 1.2, scrollTrigger: {
+            trigger: `.solution__card-left__description__title span`,
+            start: "top center",
+        }
+    })
+    gsap.fromTo('.solution__card-left__description__subtitle', { y: 100, opacity: 0 }, {
+        y: 0, opacity: 1, duration: 0.3, stagger: 1.2, scrollTrigger: {
+            trigger: `.solution__card-left__description__subtitle`,
+            start: "top center"
+        }
+    })
 
     // news 
     gsap.fromTo('.news__header-title span', { y: 100 }, {

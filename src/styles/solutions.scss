@@ -17,7 +17,7 @@
     letter-spacing: 0.03em;
     font-size: 3rem;
     line-height: 110%;
-    padding: 0 1.5rem ;
+    padding: 1rem 1.5rem ;
     padding-left: var(--container-padding);
     border: 1px solid #4D4D4D;
     margin-top: -6px;
@@ -40,9 +40,10 @@
 .solution__card-left__arrows {display: none;}
 .solutions__card-right__img{
     min-height: clamp(32rem, 50vw,54rem);
-    position: absolute;
 }
-
+.solutions__card-right__img-control {
+    background-position: -50% -50%
+}
 .carousel {position: relative;}
 .carousel__bullets {
     z-index: 10;

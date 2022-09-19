@@ -1,25 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Slider from './Slider'
-import { ParallaxBanner } from 'react-scroll-parallax';
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+import { Parallax, Background } from 'react-parallax';
+
 
 export default function SolutionCard({ solution, solutionIndex }) {
-    useEffect(() => {
-        gsap.fromTo('.solution__card-left__description__title span', { y: 100 }, {
-            y: 0, duration: 0.3, stagger: 1.2, scrollTrigger: {
-                trigger: `.solution__card-left__description__title span`,
-                start: "top center",
-            }
-        })
-        gsap.fromTo('.solution__card-left__description__subtitle', { y: 100, opacity: 0 }, {
-            y: 0, opacity: 1, duration: 0.3, stagger: 1.2, scrollTrigger: {
-                trigger: `.solution__card-left__description__subtitle`,
-                start: "top center"
-            }
-        })
-    }, [])
+
 
     return (
         <div id={`solution__card${solutionIndex}`} className="solutions__card">
@@ -38,9 +23,12 @@ export default function SolutionCard({ solution, solutionIndex }) {
             </div>
             <div className="solutions__card-right">
                 {solution.imgUrl && (
-                    <ParallaxBanner
-                        layers={[{ image: solution.imgUrl, speed: -30 }]}
-                        className="solutions__card-right__img" />)}
+                    <Parallax strength={400} className="solutions__card-right__img"
+                    >
+                        <Background className="custom-bg">
+                            <img src={solution.imgUrl} className="solutions__card-right__img-control" alt="fill murray" />
+                        </Background>
+                    </Parallax>)}
                 {solution.employData && (
                     <Slider slides={solution.employData} />
                 )}
